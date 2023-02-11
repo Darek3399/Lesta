@@ -286,8 +286,6 @@
 						</div>
 
 						<span class="comparison__changes_item-before-after">После</span>
-						<span class="comparison__changes_item-title" style="margin-top: -10px; font-size: 16px">(&nbsp; Реализована
-							только desktop версия. )</span>
 						<div class="comparison__changes_scroll-after">
 							<div class="comparison__changes_scroll-after-item">
 								<img src="./img/scroll0.jpg" alt="" class="comparison__changes_scroll-after-item-img"
@@ -342,8 +340,8 @@
 					<span class="comparison__changes_item-title">Было бы неплохо вынести выбранный блок в модальное окно.
 						Такой подход отлично решит проблему с путаницей в инфо-блоках и сделает страницу живее.</span>
 
-					<button type="button" class="popup__button"><img src="./img/pop-up__button-bg.png" alt=""
-							class="popup__button-img" /></button>
+					<button type="button" class="popup__content-button"><img src="./img/pop-up__button-bg.png" alt=""
+							class="popup__content-button-img" /></button>
 
 				</div>
 
@@ -351,33 +349,56 @@
 					<div class="popup__cntr">
 						<img src="./img/pop-up-bg.jpg" alt="" class="popup__cntr-img" />
 						<div class="popup__content0 popup__content">
-							<span class="popup__content-text">Самый первый контент</span>
 						</div>
 						<div class="popup__content1 popup__content">
-							<span class="popup__content-text">Контент<br>Контент<br>Контент<br>Контент<br></span>
 						</div>
 						<div class="popup__content2 popup__content">
-							<span class="popup__content-text">Ещё контент</span>
 						</div>
 						<div class="popup__content3 popup__content">
-							<span class="popup__content-text">Главный контент</span>
 						</div>
+
+
+
 						<div class="popup__content4 popup__content">
-							<span class="popup__content-text">Контент не главный, но всё равно важный</span>
+
+							<div class="popup__scroll">
+								<div class="popup__scroll-item">
+									<img src="./img/scroll0.jpg" alt="" class="popup__scroll-item-img"
+										draggable="false" />
+								</div>
+								<div class="popup__scroll-item">
+									<img src="./img/scroll1.jpg" alt="" class="popup__scroll-item-img"
+										draggable="false" />
+								</div>
+								<div class="popup__scroll-item">
+									<img src="./img/scroll2.jpg" alt="" class="popup__scroll-item-img"
+										draggable="false" />
+								</div>
+								<div class="popup__scroll-item">
+									<img src="./img/scroll3.jpg" alt="" class="popup__scroll-item-img"
+										draggable="false" />
+								</div>
+								<div class="popup__scroll-item">
+									<img src="./img/scroll4.jpg" alt="" class="popup__scroll-item-img"
+										draggable="false" />
+								</div>
+							</div>
 						</div>
-						<div class="popup__content5 popup__content">
-							<span class="popup__content-text">И ещё чуть чуть контента</span>
-						</div>
+
+
+
+
 					</div>
-					<div class="popup__close">
-						<img src="./img/m_angle-black.png" alt="" class="popup__cntr-img"/>
-					</div>
+					<button type="button" class="popup__close-button">
+						<img src="./img/m_angle-black.png" alt="" class="popup__close-button-img"/>
+					</button>
 				</div>
 
 			</div>
 		</div>
 	</main>
-	<script src="./js/index.js"></script>
+	<script src="./js/index.js" type="module"></script>
+	<script src="./js/scroll.js" type="module"></script>
 </body>
 
 </html>
