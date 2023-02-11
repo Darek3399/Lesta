@@ -1,0 +1,65 @@
+.sites-tusks {
+	position: relative;
+	z-index: 3;
+	width: 100%;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	padding-top: 40px;
+	&__enumeration {
+		&_title {
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+		&_text {
+			font-size: 23px;
+			margin-left: 15px;
+			margin-bottom: 55px;
+		}
+	}
+	&__title {
+		font-size: 40px;
+		font-weight: 700;
+		color: rgb(223, 222, 222);
+		margin-bottom: 55px;
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		font-size: 20px;
+		line-height: 50px;
+		margin: 0 50px 45px 50px;
+		&_link {
+			width: fit-content;
+			height: fit-content;
+		}
+		&_tusk {
+			margin-bottom: 30px;
+		}
+		&_response {
+			line-height: 36px;
+		}
+	}
+	&__num {
+		font-size: 30px;
+		font-weight: 700;
+		color: rgb(17, 103, 114);
+	}
+}
+
+
+@media (max-width: 960px) {
+	.sites-tusks__item{
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.sites-tusks{
+		padding: 0 15px;
+	}
+	.sites-tusks__num{
+		font-size: 23px;
+	}
+	.sites-tusks__item_tusk{
+		line-height: 30px;
+	}
+}
