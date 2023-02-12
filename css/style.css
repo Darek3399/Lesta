@@ -644,6 +644,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .popup {
+  min-width: 400px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -726,7 +727,6 @@ h1, h2, h3, h4, h5, h6 {
   align-items: start;
   justify-content: start;
   padding-left: 30px;
-  overflow-y: scroll;
 }
 .popup__content1 span {
   width: -webkit-fit-content;
@@ -740,6 +740,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: -20px;
   color: goldenrod;
   font-weight: 700;
+}
+.popup__content1-items-cntr {
+  width: 100%;
+  overflow-y: scroll;
 }
 .popup__content1-item {
   display: flex;
@@ -885,20 +889,44 @@ h1, h2, h3, h4, h5, h6 {
   .comparison__changes_img-cntr {
     width: 100%;
   }
+  .popup__cntr {
+    display: flex;
+    flex-direction: column;
+  }
   .popup__content1 {
     padding: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
   .popup__content1-title {
     font-size: 16px;
     margin-left: 0;
+    width: 100% !important;
+  }
+  .popup__content1-items-cntr {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 33.333%);
+    width: 100%;
   }
   .popup__content1-item {
     font-size: 13px;
     font-weight: 500;
+    width: 100% !important;
     gap: 0;
+    margin-left: 30px;
   }
   .popup__content1-item img {
     width: 20px;
+  }
+  .popup__content2-video {
+    margin-top: -110px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .popup__cntr-img {
+    top: 0;
+    left: 0;
   }
 }
 @media (max-width: 650px) {
@@ -916,16 +944,24 @@ h1, h2, h3, h4, h5, h6 {
   .popup__content1 {
     gap: 15px;
   }
+  .popup__content1-items-cntr {
+    grid-template-columns: repeat(auto-fill, 50%);
+  }
   .popup__content1-item {
     flex-wrap: wrap;
     line-height: 10px;
     gap: 3px;
+  }
+  .popup__content2-video {
+    height: 100%;
+    margin-top: 0;
   }
 }
 body {
   font-family: "Roboto Condensed", sans-serif;
   overflow-x: hidden;
   background: rgb(5, 14, 13);
+  -webkit-tap-highlight-color: transparent;
 }
 
 body::-webkit-scrollbar {
