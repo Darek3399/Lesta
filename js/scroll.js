@@ -1,37 +1,33 @@
-const scroll = (array, container) => {
+
+// слегка багует скролл. Можно сделать его кастомным, тогда вообще огонь будет
+
+const scroll = (array, container, gap) => {
+// 1й аргумент - массив прокручиваемых объектов
+// 2й аргумент - контейнер для прокручиваемых объектов
+// 3й аргумент - gap
 
 
-	// // СЕТАЕМ ИЗНАЧАЛЬНОЕ РАЗПОЛОЖЕНИЕ БЛОКОВ
+
+
+
+
+
+	// // СЕТАЕМ ИЗНАЧАЛЬНОЕ РАЗПОЛОЖЕНИЕ ITEMS
 	const setCurrentGap = () => {
 		for (let i = 0; i < array.length; i++) {
 
-			const gap = () => {
+			// left для всех items, кроме первого
+			const gapValue = () => {
 				if (i !== 0) {
-					return 10
+					return gap
 				}
 				return 0
 			}
 
-			array[i].style.left = `${array[0].getBoundingClientRect().width * i + (gap() * i)}px`
+			array[i].style.left = `${array[0].getBoundingClientRect().width * i + (gapValue() * i)}px`
 		}
 	}
 	setCurrentGap()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	// // СМЕЩЕНИЕ ПРИ ПЕРЕТАСКИВАНИИ И ПЛАВНЫЙ ВОЗВРАТ ПРИ ОТПУСКАНИИ--------------------------
@@ -57,11 +53,8 @@ const scroll = (array, container) => {
 
 
 
-
 		// СЕТАЕМ НАЧАЛЬНОЕ ПОЛОЖЕНИЕ НАЖАТИЯ
 		item.onmousedown = (e) => {
-
-
 
 
 			let initIndent = []
@@ -87,6 +80,7 @@ const scroll = (array, container) => {
 				}
 
 
+				console.log()
 
 				for (let i = 0; i < array.length; i++) {
 
@@ -94,6 +88,7 @@ const scroll = (array, container) => {
 
 					array[i].style.left = `${target}px`
 				}
+
 				if (parseInt(array[array.length - 1].style.left) < lastItemLeft) {
 					setLastLeftToggle = true
 				}
@@ -116,7 +111,7 @@ const scroll = (array, container) => {
 					toggleMousemove = false
 
 					for (let i = 0; i < array.length; i++) {
-						array[i].style.transition = '1s ease-in-out'
+						array[i].style.transition = '0.3s ease-in-out'
 
 
 						if (parseInt(array[0].style.left) > init[0]) {
@@ -157,8 +152,5 @@ const scroll = (array, container) => {
 			}
 		})
 	}
-
 }
-
-
 export default scroll
