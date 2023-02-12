@@ -374,6 +374,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 20px;
   margin-bottom: -35px;
 }
+.comparison .mt-0 {
+  margin-top: 0px;
+}
 .comparison__positive_title {
   color: rgb(223, 222, 222);
   font-size: 30px;
@@ -402,6 +405,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .comparison__positive_img {
   width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.37);
 }
 .comparison__before-after {
   margin: 20px auto 10px auto;
@@ -815,7 +819,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .popup__content-button {
   width: 100%;
-  margin: 40px 0;
+  margin: 55px 0;
 }
 .popup__content-button-img {
   width: 100%;
@@ -962,6 +966,7 @@ body {
   overflow-x: hidden;
   background: rgb(5, 14, 13);
   -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: auto;
 }
 
 body::-webkit-scrollbar {
