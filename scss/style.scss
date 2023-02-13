@@ -13,6 +13,7 @@ html{
 	scroll-behavior:smooth;
 }
 body {
+	user-select: none;
 	font-family: "Roboto Condensed", sans-serif;
 	overflow-x: hidden;
 	background: rgba(5, 14, 13);
