@@ -1,0 +1,130 @@
+.changes-to-the-main-page {
+	width: 80%;
+	margin: 0 auto;
+
+	img{
+		border-radius: 5px;
+	}
+
+	&__title {
+		font-size: 40px;
+		font-weight: 700;
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
+
+
+
+
+
+
+
+
+
+	&__design-errors {
+		display: flex;
+		flex-direction: column;
+		&_title {
+			color: rgb(223, 222, 222);
+			font-size: 30px;
+			margin-bottom: 15px;
+			margin-left: 30px;
+			font-weight: 700;
+		}
+		&_subtitle {
+			font-size: 20px;
+			font-weight: 500;
+			width: 100%;
+			line-height: 25px;
+		}
+		&_num {
+			width: 100%;
+			font-size: 30px;
+			margin: 70px auto 10px auto;
+			color: rgb(17, 103, 114);
+			font-weight: 700;
+		}
+		&_item {
+			display: flex;
+			flex-direction: column;
+		}
+		&_text {
+			font-size: 20px;
+			font-weight: 500;
+			width: 100%;
+			line-height: 25px;
+			margin-bottom: 15px;
+		}
+		&_img-cntr {
+			margin-bottom: 35px;
+		}
+		&_img {
+			width: 100%;
+		}
+
+
+
+
+
+		
+		&_video-cntr {
+			width: 100%;
+			max-height: 270px;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			border-radius: 3px;
+			margin-bottom: 35px;
+		}
+		&_video {
+			margin-top: -140px;
+			width: 100%;
+			filter: url('data:image/svg+xml,\
+			<svg xmlns="http://www.w3.org/2000/svg">\
+			  <filter id="sharpen">\
+				 <feConvolveMatrix order="3" preserveAlpha="true" kernelMatrix="1 -1 1 -1 -1 -1 1 -1 1"/>\
+			  </filter>\
+			</svg>#sharpen');
+		}
+		&_video2 {
+			margin-top: -140px;
+			width: 100%;
+			filter: url('data:image/svg+xml,\
+			<svg xmlns="http://www.w3.org/2000/svg">\
+			  <filter id="sharpen">\
+				 <feConvolveMatrix order="3" preserveAlpha="true" kernelMatrix="1 -1 1 -1 -1 -1 1 -1 1"/>\
+			  </filter>\
+			</svg>#sharpen') blur(1px);
+		}
+	}
+}
+
+
+
+@media (max-width: 960px) {
+	.changes-to-the-main-page {
+		text-align: center;
+		width: 100%;
+	}
+	.changes-to-the-main-page__title {
+		font-size: 34px;
+		text-align: center;
+	}
+	.changes-to-the-main-page__design-errors_title{
+		text-align: center;
+		margin-left: 0;
+		font-size: 24px;
+	}
+	.changes-to-the-main-page__design-errors_subtitle {
+		font-size: 18px;
+	}
+	.changes-to-the-main-page__design-errors_item {
+		width: 100%;
+	}
+	.changes-to-the-main-page__design-errors_text {
+		font-size: 18px;
+	}
+	.changes-to-the-main-page__design-errors_num {
+		text-align: left;
+	}
+}

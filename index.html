@@ -12,16 +12,16 @@
 	<nav class="nav">
 		<ul class="nav__ul">
 			<li class="nav__li">
-				<a class="nav__a" href="#1">Задачи новостей</a>
+				<a class="nav__a" href="#news-tusks">Задачи новостей</a>
 			</li>
 			<li class="nav__li">
-				<a class="nav__a" href="#2">Сравнение патч-ноутов</a>
+				<a class="nav__a" href="#patchnotes-comparison">Сравнение патч-ноутов</a>
 			</li>
 			<li class="nav__li">
-				<a class="nav__a" href="#3">Критика вёрстки "Об игре"</a>
+				<a class="nav__a" href="#analysis">Анализ вёрстки "Об игре"</a>
 			</li>
 			<li class="nav__li">
-				<a class="nav__a" href="#4">Крестики - Нолики</a>
+				<a class="nav__a" href="#game">Крестики - Нолики</a>
 			</li>
 		</ul>
 		<button type="button" class="nav__burger-button">
@@ -32,16 +32,16 @@
 	<div class="burger">
 		<ul class="burger__ul">
 			<li class="burger__li">
-				<a class="burger__a" href="#1">Задачи новостей</a>
+				<a class="burger__a" href="#news-tusks">Задачи новостей</a>
 			</li>
 			<li class="burger__li">
-				<a class="burger__a" href="#2">Сравнение патч-ноутов</a>
+				<a class="burger__a" href="#patchnotes-comparison">Сравнение патч-ноутов</a>
 			</li>
 			<li class="burger__li">
-				<a class="burger__a" href="#3">Критика вёрстки "Об игре"</a>
+				<a class="burger__a" href="#analysis">Анализ вёрстки "Об игре"</a>
 			</li>
 			<li class="burger__li">
-				<a class="burger__a" href="#4">Крестики - Нолики</a>
+				<a class="burger__a" href="#game">Крестики - Нолики</a>
 			</li>
 		</ul>
 	</div>
@@ -59,10 +59,11 @@
 		<div class="header__color-transition"></div>
 	</header>
 	<main class="main">
+
 		<div class="main__separator"></div>
 		<div class="main__cntr">
 			<div class="sites-tusks">
-				<span class="sites-tusks__enumeration_title">Компании, с сайтами которых я знаком / познакомился:</span>
+				<span class="sites-tusks__enumeration_title"><a id="news-tusks"></a>Компании, с сайтами которых я знаком / познакомился:</span>
 				<span class="sites-tusks__enumeration_text">Ubisoft, Gaijin, 1C, Riot Games и ещё куча других.</span>
 				<h2 class="sites-tusks__title">5 публикаций, понравившихся мне подачей:</h2>
 
@@ -129,7 +130,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="main__separator"></div>
+
+		<div class="main__separator"><a id="patchnotes-comparison"></a></div>
 		<div class="main__cntr">
 			<div class="comparison">
 				<h2 class="comparison__title">Сравнение патч-ноутов</h2>
@@ -197,8 +199,11 @@
 						<div class="comparison__changes_arrow-bad-example">
 							<p class="comparison__changes_arrow-bad-example-text">На данный момент стрелка выглядит так -
 								Дёргается текст при "открытии" и при наведении правее/левее стрелки срабатывает hover. И каждый
-								раз, когда пользователь провёл рядом мышкой, начинается примерно следующее -<br> ( стрелки
-								интерактивны )</p>
+								раз, когда пользователь провёл рядом мышкой, начинается примерно следующее
+							</p>
+							<div class="interactive">
+								<img src="./img/arrow-bad.gif" alt="" class="interactive__img" />
+							</div>
 							<div class="comparison__changes_arrow-bad-example-cntr">
 								<div class="comparison__changes_arrow-bad-example-flexible">
 									<span class="comparison__changes_arrow-bad-example-flexible-text">Гамбургская верфь. Admiral
@@ -237,6 +242,7 @@
 
 
 					<div class="comparison__changes_item">
+						<div id="links-srrow"></div>
 						<span class="comparison__changes_item-num">2)</span>
 						<span class="comparison__changes_item-title">Иконки перехода на внешнюю ссылку выглядят как рудимент.
 							Они слишком большие и напрасно смещены вниз.</span>
@@ -260,12 +266,16 @@
 
 
 					<div class="comparison__changes_item">
+						<div id="scroll"></div>
 						<span class="comparison__changes_item-num">3)</span>
 						<span class="comparison__changes_item-title">Галерея изображений с горизонтальным скроллом и без
 							возможности прокрутки карусели зажатием ЛКМ неудобно. Да и среди такой огромной аудитории явно
 							найдутся люди с ограниченными возможностями, которым подобный функционал будет нетролько удобен, но
 							и необходим! Плюс на картинки с одинаковой палитрой не особо приятно смотреть, когда они
 							расставлены сплошной полосой.</span>
+						<div class="interactive" style="margin-bottom: -15px;">
+							<img src="./img/arrow-bad.gif" alt="" class="interactive__img" />
+						</div>
 						<span class="comparison__changes_item-before-after">До</span>
 						<div class="comparison__changes_scroll-before">
 							<div class="comparison__changes_scroll-before-item">
@@ -340,8 +350,12 @@
 					<span class="comparison__changes_item-title">Было бы неплохо вынести выбранный блок в модальное окно.
 						Такой подход отлично решит проблему с путаницей в инфо-блоках и сделает страницу живее. Demo -</span>
 
-					<button type="button" class="popup__content-button"><img src="./img/pop-up__button-bg.png" alt=""
-							class="popup__content-button-img" /></button>
+					<div class="interactive" style="margin-bottom: -45px;">
+						<img src="./img/arrow-bad.gif" alt="" class="interactive__img" />
+					</div>
+					<button type="button" class="popup__content-button">
+						<img src="./img/pop-up__button-bg.png" alt="" class="popup__content-button-img" />
+					</button>
 
 				</div>
 
@@ -363,95 +377,131 @@
 
 							<div class="popup__content1-items-cntr">
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png">
 									<span class="">VI Gokase</span>
 								</span>
-	
+
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png">
 									<span class="popup__content1-gold">IV Yūbari</span>
 								</span>
-	
+
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png">
 									<span class="popup__content1-gold">III Katori</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png">
 									<span class="">IV Kuma</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
 									<span class="">IV Isokaze</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
 									<span class="">V Minekaze</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png">
 									<span class="popup__content1-gold">V Kamikaze</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
 									<span class="">III Wakatake</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png">
 									<span class="">IV Danae</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_3b66d1136c736e56c9f2f7cda2f1220c46a1bb8c8240ba11dff0035e91639e83.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Pan_Asia_3b66d1136c736e56c9f2f7cda2f1220c46a1bb8c8240ba11dff0035e91639e83.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
 									<span class="">V Jianwei</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_United_Kingdom_c1f75d7cca85dc4b48208e9ff7f96c35c7002b584a1081fa4633022e48ca5676.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png">
 									<span class="">VI Queen Elizabeth</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_USA_dd9fc06d19a8638f4077ab2fe200d227bf8ac8784efe8f3313be33ebbf37ae19.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png">
 									<span class="popup__content1-gold">VIII San Diego</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Commonwealth_abdc3eb3f8c9b1c0421b3aed2f550ac45b78602942f9a4a2cdd438835720edc7.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Commonwealth_abdc3eb3f8c9b1c0421b3aed2f550ac45b78602942f9a4a2cdd438835720edc7.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png">
 									<span class="popup__content1-gold">VII Huron</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png">
 									<span class="popup__content1-gold">X Москва</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Russia_6ce701e1c2f2ac3909a68a0a7b23be515f09aa699a2d8bed2efc47d69e326e5c.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
 									<span class="">VIII Киев</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png">
 									<span class="">X Z-52</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Japan_740b57e1da9b5d3fe46b61e09e3dcda1f34dfd7afdafe98714cb20012d5c1f0e.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png">
 									<span class="">★ Sekiryu</span>
 								</span>
 								<span class="popup__content1-item">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png">
-									<img alt=""src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/nation_flags/tiny/flag_Germany_18970d883c7758b53538983bd09ad0732491aaf593f95649ca630e16ab3fef30.png">
+									<img alt=""
+										src="https://glossary-wows-global.gcdn.co/icons/vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png">
 									<span class="">VIII Bismarck</span>
 								</span>
 							</div>
@@ -461,15 +511,10 @@
 
 						<div class="popup__content2 popup__content">
 							<video class="popup__content2-video" loop="loop" preload="auto" muted>
-								<source
-									src="//wows-static-production.wgcdn.co/wowsp/15ae9726/images/video_aboutpage/WeatherIsNotFine_small.mp4"
-									type="video/mp4; codecs=&quot;avc1.4D401E, mp4a.40.2&quot;">
-								<source
-									src="//wows-static-production.wgcdn.co/wowsp/15ae9726/images/video_aboutpage/ WeatherIsNotFine_small.webm"
-									type="video/webm; codecs=&quot;vp8, vorbis&quot;">
-								<source
-									src="//wows-static-production.wgcdn.co/wowsp/15ae9726/images/video_aboutpage/ WeatherIsNotFine_small.ogv"
-									type="video/ogg; codecs=&quot;theora, vorbis&quot;">
+								<source src="./video/WeatherIsNotFine_small.mp4" type="video/mp4; codecs=" avc1.4D401E,
+									mp4a.40.2"">
+								<source src="./video/WeatherIsNotFine_small.webm" type="video/webm; codecs=" vp8, vorbis"">
+								<source src="./video/WeatherIsNotFine_small.ogv" type="video/ogg; codecs=" theora, vorbis"">
 							</video>
 						</div>
 
@@ -504,9 +549,239 @@
 						<img src="./img/m_angle-black.png" alt="" class="popup__close-button-img" />
 					</button>
 				</div>
-
 			</div>
 		</div>
+
+		<div class="main__separator"><a id="analysis"></a></div>
+		<div class="main__cntr">
+
+			<h2 class="changes-to-the-main-page__title">Анализ страницы «Об игре»</h2>
+			<h3 class="changes-to-the-main-page__design-errors_title">Ошибки в дизайне</h3>
+			<div class="changes-to-the-main-page">
+				<div class="changes-to-the-main-page__design-errors">
+
+
+					<div class="changes-to-the-main-page__design-errors_item">
+						<span class="changes-to-the-main-page__design-errors_subtitle">
+							Такие как <a href="#links-srrow">Иконки перехода на внешнюю ссылку</a> и <a
+								href="#scroll">Горизонтальная галерея</a>
+							<br>
+							<br>
+							К сожалению, ещё есть что добавить. А именно:
+						</span>
+						<span class="changes-to-the-main-page__design-errors_num">1)</span>
+						<p class="changes-to-the-main-page__design-errors_text">
+							Плохая читаемость текста в хедере и смешение общей композиции в большое, разноцветное пятно
+						</p>
+						<div class="changes-to-the-main-page__design-errors_img-cntr">
+							<img src="./img/header_bg_white.png" class="changes-to-the-main-page__design-errors_img" alt="" />
+						</div>
+
+						<p class="changes-to-the-main-page__design-errors_text">
+							На мой взгляд, добавление более плотных теней тексту, кнопке "СКАЧАТЬ ИГРУ" и затенение фонового
+							изображения крайне уместно скажутся на читаемости контента и композиции
+						</p>
+						<div class="changes-to-the-main-page__design-errors_img-cntr">
+							<img src="./img/header_bg_black.png" class="changes-to-the-main-page__design-errors_img" alt="" />
+						</div>
+					</div>
+
+					<div class="changes-to-the-main-page__design-errors_item">
+						<span class="changes-to-the-main-page__design-errors_num">2)</span>
+						<p class="changes-to-the-main-page__design-errors_text">
+							В случае большой разницы в размерах кораблей лучшим решением будет расположить каждый ровно над
+							названием класса. Картина начнёт выглядеть симметричной и более приятной для восприятия
+							<br>
+							<br>
+							В дополнение - слегка уменьшить размеры иконок. Корабль, который всего лишь в 2 раза болше иконки,
+							которых 3 штуки, выглядит слишком крошечно
+						</p>
+						<div class="changes-to-the-main-page__design-errors_img-cntr">
+							<img src="./img/ships_after.png" class="changes-to-the-main-page__design-errors_img" alt="" />
+						</div>
+					</div>
+
+					<div class="changes-to-the-main-page__design-errors_item">
+						<span class="changes-to-the-main-page__design-errors_num">3)</span>
+						<p class="changes-to-the-main-page__design-errors_text">
+							Большой флаг, на бэкграунде, залазит под верхний блок, из за чего выглядит обрезанным
+						</p>
+						<div class="changes-to-the-main-page__design-errors_img-cntr">
+							<img src="./img/flagsBG_bad.png" class="changes-to-the-main-page__design-errors_img" alt="" />
+						</div>
+						<p class="changes-to-the-main-page__design-errors_text">
+							Так лучше
+						</p>
+						<div class="changes-to-the-main-page__design-errors_img-cntr">
+							<img src="./img/flagsBG_good.png" class="changes-to-the-main-page__design-errors_img" alt="" />
+						</div>
+						<p class="changes-to-the-main-page__design-errors_text">
+							А вот так на мобилке, при нажатии на интерактивный элемент он выделяется, что всегда выбивается из
+							общей картины
+							<br>
+							<br>
+							Плюс, случеается баг, когда активны 2 элемента ( флага )
+						</p>
+						<div class="changes-to-the-main-page__design-errors_img-cntr">
+							<img src="./img/flags_mobile.png" class="changes-to-the-main-page__design-errors_img" alt="" />
+						</div>
+					</div>
+
+					<div class="changes-to-the-main-page__design-errors_item">
+						<span class="changes-to-the-main-page__design-errors_num">4)</span>
+						<p class="changes-to-the-main-page__design-errors_text">
+							Качество видео о смене погоды оставляет желать лучшего. Периодически видны "квадратики".
+						</p>
+						<div class="changes-to-the-main-page__design-errors_video-cntr">
+							<video class="changes-to-the-main-page__design-errors_video" loop="loop" preload="auto" muted>
+								<source src="./video/WeatherIsNotFine_small.mp4" type="video/mp4; codecs=" avc1.4D401E,
+									mp4a.40.2"">
+								<source src="./video/WeatherIsNotFine_small.webm" type="video/webm; codecs=" vp8, vorbis"">
+								<source src="./video/WeatherIsNotFine_small.ogv" type="video/ogg; codecs=" theora, vorbis"">
+							</video>
+						</div>
+						<p class="changes-to-the-main-page__design-errors_text">
+							И так так нецелесообразно повышать его качество в ущерб производительности, будет неплохим решением
+							наложить на него размытие. Видео и дальше сможет прекрасно доносить свою суть и вместе с тем
+							выглядеть куда приятнее
+						</p>
+						<div class="changes-to-the-main-page__design-errors_video-cntr">
+							<video class="changes-to-the-main-page__design-errors_video2" loop="loop" preload="auto" muted>
+								<source src="./video/WeatherIsNotFine_small.mp4" type="video/mp4; codecs=" avc1.4D401E,
+									mp4a.40.2"">
+								<source src="./video/WeatherIsNotFine_small.webm" type="video/webm; codecs=" vp8, vorbis"">
+								<source src="./video/WeatherIsNotFine_small.ogv" type="video/ogg; codecs=" theora, vorbis"">
+							</video>
+						</div>
+					</div>
+
+					<div class="changes-to-the-main-page__design-errors_item">
+						<span class="changes-to-the-main-page__design-errors_num">5)</span>
+						<p class="changes-to-the-main-page__design-errors_text" style="margin-bottom: 30px;">
+							Лично я, заметил эти разделительные линии только на 2й день. А ведь они несут очень важную функцию
+							- делят смысловую нагрузку сайта на состовляющие.
+						</p>
+						<div class="changes-to-the-main-page__design-errors_img-cntr">
+							<img src="./img/bad_hr.png" class="changes-to-the-main-page__design-errors_img" alt="" />
+						</div>
+						<p class="changes-to-the-main-page__design-errors_text" style="margin-bottom: 30px;">
+							Увеличение высоты линии позволит легче искать нужные темы и просто переходить по инфоблокам
+						</p>
+						<div class="changes-to-the-main-page__design-errors_img-cntr">
+							<img src="./img/good_hr.png" class="changes-to-the-main-page__design-errors_img" alt="" />
+						</div>
+					</div>
+
+					<div class="changes-to-the-main-page__design-errors_item">
+						<span class="changes-to-the-main-page__design-errors_num">6)</span>
+						<p class="changes-to-the-main-page__design-errors_text" style="margin-bottom: 30px;">
+							Всегда найдутся любители ретро, но большинству, я уверен, будет не по душе бургер со стилистикой из
+							Windows 2000
+						</p>
+						<div class="changes-to-the-main-page__design-errors_img-cntr">
+							<img src="./img/burger98.png" class="changes-to-the-main-page__design-errors_img" alt="" />
+						</div>
+						<p class="changes-to-the-main-page__design-errors_text" style="margin-bottom: 30px;">
+							Даже самый простой дизайн бургера, как тот, что реализован на этом сайте, будет смотреться
+							симпатичней
+						</p>
+					</div>
+
+				</div>
+			</div>
+
+
+			<h3 class="layout-errors__title">Ошибки в вёрстке</h3>
+
+			<div class="layout-errors">
+
+				<div class="layout-errors__item">
+					<span class="layout-errors__item_num">1)</span>
+					<span class="layout-errors__item_text">
+						Съезжает ссылка при уменьшени разрешения
+					</span>
+					<div class="layout-errors__item-img-cntr">
+						<img src="./img/nav_bag.png" alt="" class="layout-errors__item-img" />
+					</div>
+				</div>
+
+				<div class="layout-errors__item">
+					<span class="layout-errors__item_num">2)</span>
+					<span class="layout-errors__item_text">
+						C 991px до 959px не скрывается картинка с кораблями
+					</span>
+					<div class="layout-errors__item-img-cntr" style="margin-bottom: 0;">
+						<img src="./img/ships_2img.png" alt="" class="layout-errors__item-img" />
+					</div>
+				</div>
+
+				<div class="layout-errors__item">
+					<span class="layout-errors__item_num">3)</span>
+					<span class="layout-errors__item_text">
+						Если, при удержании скроллбара курсор находиться над блоком, к которому этот скроллбар принадлежит, то
+						всё выглядит хорошо
+					</span>
+					<div class="layout-errors__item-img-cntr">
+						<img src="./img/scrollbar_good.png" alt="" class="layout-errors__item-img" />
+					</div>
+					<span class="layout-errors__item_text">
+						Но если увести курсор за пределы блока, то бэкграунд скроллбара становиться белым. И когда возвращаешь
+						курсор на блок, бэкграунд снова становиться нужного цвета.
+					</span>
+					<div class="layout-errors__item-img-cntr" style="margin-bottom: 0;">
+						<img src="./img/scrollbar_bad.png" alt="" class="layout-errors__item-img" />
+					</div>
+				</div>
+
+				<div class="layout-errors__item">
+					<span class="layout-errors__item_num">4)</span>
+
+
+					<span class="layout-errors__item_text">
+						На всём диапазоне разрешений, у лого компании, находящееся внизу сайта, есть левый отступ. И он не
+						мешает ( и не помогает ), пока разрешение не становится ниже 960px. Плюс ссылки, находящиеся ниже,
+						смещены влево. Слева ( сверху ) оригинал. Справа ( снизу ) как было бы лучше
+					</span>
+
+
+
+					<div class="layout-errors__item-cntr">
+						<div class="layout-errors__item-cntr-img-cntr">
+							<img src="./img/logo_bottom_bad.png" alt="" class="layout-errors__item-cntr-img" />
+						</div>
+						<div class="layout-errors__item-cntr-img-cntr" style="margin-bottom: 0;">
+							<img src="./img/logo_bottom_good.png" alt="" class="layout-errors__item-cntr-img"" />
+						</div>
+					</div>
+
+
+
+
+
+					<span class=" layout-errors__item_text">
+							А с 546px начинают уезжать и текст с иконками из блока про единый акк
+							</span>
+							<div class="layout-errors__item-cntr">
+								<div class="layout-errors__item-cntr-img-cntr">
+									<img src="./img/mobile_acc_bad.png" alt="" class="layout-errors__item-cntr-img" />
+								</div>
+								<div class="layout-errors__item-cntr-img-cntr">
+									<img src="./img/mobile_acc_good.png" alt="" class="layout-errors__item-cntr-img" />
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="game__popup">
+					<p class="game__popup_inner-text"></p>
+					<button type="button" class="game__popup_button">Сброс</button>
+				</div>
+				<div class="game" id="game"></div>
+
 	</main>
 
 	<script src="./js/index.js"></script>
