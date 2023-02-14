@@ -16,7 +16,9 @@
 		}
 		&_img {
 			height: 100%;
-			filter: blur(1.3px) invert(50%);
+			// filter: blur(1.3px) invert(50%);
+			filter: blur(1.3px) invert(50%) drop-shadow(0 0 7px gray);
+			// filter: drop-shadow(16px 16px 20px blue);
 		}
 	}
 	&__text {

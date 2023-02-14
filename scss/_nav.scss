@@ -19,7 +19,7 @@
 		}
 		&_img {
 			height: 100%;
-			filter: blur(1.3px) invert(50%);
+			filter: blur(1.3px) invert(50%) drop-shadow(0 0 4px gray);
 		}
 	}
 

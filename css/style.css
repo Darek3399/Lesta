@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav__logo_img {
   height: 100%;
-  filter: blur(1.3px) invert(50%);
+  filter: blur(1.3px) invert(50%) drop-shadow(0 0 4px gray);
 }
 .nav__ul {
   width: 80%;
@@ -1263,7 +1263,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .footer__logo_img {
   height: 100%;
-  filter: blur(1.3px) invert(50%);
+  filter: blur(1.3px) invert(50%) drop-shadow(0 0 7px gray);
 }
 .footer__text {
   color: white;
