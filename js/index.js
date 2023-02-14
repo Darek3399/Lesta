@@ -6,9 +6,13 @@ let toggleBurger = false
 burgerButton.addEventListener(`click`, () => {
 	toggleBurger = !toggleBurger
 	if (toggleBurger) {
-		burger.setAttribute(`style`, `opacity: 1; z-index: 2;`)
+		burger.style.zIndex = 2
+		burger.style.opacity = 1
 	} else {
-		burger.setAttribute(`style`, `opacity: 0; z-index: -1;`)
+		burger.style.opacity = 0
+		setTimeout(() => {
+			burger.style.zIndex = -1
+		}, 200);
 	}
 })
 
@@ -246,10 +250,11 @@ const scroll = (array, container, gap) => {
 }
 
 
-setTimeout(() => {
+
+window.addEventListener(`load`, () => {
 	scroll(scrollItems, scrollCntr, 10)
 	scroll(popUpscrollItems, popUpscrollCntr, 10)
-}, 100);
+});
 
 
 
@@ -378,7 +383,7 @@ for (let item of items) {
 					}
 				}
 			}
-			if(arr.length == 0){
+			if (arr.length == 0) {
 				document.querySelector(`.game__popup_inner-text`).innerHTML = `Ничья`
 				gamePopUp.style.opacity = 1
 				gamePopUp.style.zIndex = 1
@@ -446,5 +451,5 @@ document.querySelector(`.game__popup_button`).onmousedown = () => {
 
 
 window.addEventListener(`resize`, () => {
-	gameHeight = game.getBoundingClientRect().width
+	game.setAttribute(`style`, `height: ${Math.round(game.getBoundingClientRect().width)}px;`)
 })

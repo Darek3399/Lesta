@@ -18,7 +18,7 @@ body {
 	overflow-x: hidden;
 	background: rgba(5, 14, 13);
 	-webkit-tap-highlight-color: transparent;
-	-webkit-overflow-scrolling: auto;
+	position: relative;
 }
 body::-webkit-scrollbar {
 	background-color: rgba(0, 92, 104, 0.582);
