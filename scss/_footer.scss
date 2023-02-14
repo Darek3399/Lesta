@@ -16,13 +16,12 @@
 		}
 		&_img {
 			height: 100%;
-			// filter: blur(1.3px) invert(50%);
-			filter: blur(1.3px) invert(50%) drop-shadow(0 0 7px gray);
-			// filter: drop-shadow(16px 16px 20px blue);
+			filter: blur(1px) invert(51%) drop-shadow(0 0 7px gray);
 		}
 	}
 	&__text {
 		color: white;
+		font-size: 15px;
 		font-size: 15px;
 	}
 }

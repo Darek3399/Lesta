@@ -9,8 +9,7 @@
 	position: fixed;
 	top: 0;
 	z-index: 4;
-
-
+	
 	&__logo {
 		&_cntr {
 			padding: 14px 0;
@@ -19,7 +18,7 @@
 		}
 		&_img {
 			height: 100%;
-			filter: blur(1.3px) invert(50%) drop-shadow(0 0 4px gray);
+			filter: blur(0.5px) invert(50%) drop-shadow(0 0 4px gray);
 		}
 	}
 
