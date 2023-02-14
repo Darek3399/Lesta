@@ -1,9 +1,18 @@
 .game {
 	width: 55%;
-	margin: 0 auto;
+	margin: 50px auto;
 	background: rgb(21, 103, 124);
 	display: flex;
 	flex-wrap: wrap;
+	&__title {
+		font-size: 40px;
+		font-weight: 700;
+		color: rgb(223, 222, 222);
+		margin-bottom: 55px;
+		margin-left: 20%;
+		margin-top: 25px;
+	}
+	
 	&__item {
 		width: 33.333%;
 		height: 33.333%;

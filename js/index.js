@@ -327,9 +327,6 @@ for (let item of items) {
 		const check = (imgId, id) => {
 			let arr = []
 
-
-
-
 			for (let y = 0; y < items.length; y++) {
 
 
