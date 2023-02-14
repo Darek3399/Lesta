@@ -9,6 +9,20 @@
 	position: fixed;
 	top: 0;
 	z-index: 4;
+
+
+	&__logo {
+		&_cntr {
+			padding: 14px 0;
+			height: 100%;
+			margin-left: 20px;
+		}
+		&_img {
+			height: 100%;
+			filter: blur(1.3px) invert(50%);
+		}
+	}
+
 	&__ul {
 		width: 80%;
 		display: flex;

@@ -1,3 +1,5 @@
+
+// бургер------------------------------------------------------
 const burger = document.querySelector(`.burger`)
 const burgerButton = document.querySelector(`.nav__burger-button`)
 let toggleBurger = false
@@ -250,7 +252,7 @@ const scroll = (array, container, gap) => {
 }
 
 
-
+// запуск скрипта скролла после загрузки окна. Исключает баг с шириной айтема 0%
 window.addEventListener(`load`, () => {
 	scroll(scrollItems, scrollCntr, 10)
 	scroll(popUpscrollItems, popUpscrollCntr, 10)

@@ -31,7 +31,7 @@
 		opacity: 0;
 		top: 0;
 		left: 0;
-		background: rgba(0, 0, 0, 0.767);
+		background: rgba(0, 0, 0, 0.904);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -49,9 +49,9 @@
 			font-weight: 700;
 			border-radius: 5px;
 			background: rgb(17, 103, 114);
-			color: #c0c0c0;
-			box-shadow: 0 0 3px 5px rgb(17 103 114);
-			text-shadow: 0 0 5px #c0c0c0;
+			color: white;
+			box-shadow: 0 0 3px 3px rgb(17 103 114);
+			text-shadow: 0 0 2px white;
 		}
 	}
 }
