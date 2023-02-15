@@ -317,7 +317,6 @@
 
 
 .popup {
-	min-width: 400px;
 	user-select: none;
 	position: fixed;
 	top: 0;
@@ -331,6 +330,7 @@
 	background: rgba(0, 0, 0, 0.808);
 	display: flex;
 	transition: 1s;
+	min-width: 400px;
 	::-webkit-scrollbar {
 		width: 10px;
 		height: 10px;
@@ -342,7 +342,6 @@
 	&__cntr {
 		border-radius: 3px;
 		width: 100%;
-		height: 100%;
 		position: relative;
 		right: 100%;
 		z-index: 1;

@@ -89,6 +89,13 @@ popUpCloseButton.addEventListener(`click`, () => {
 
 
 
+// запуск скрипта скролла после загрузки окна. Исключает баг с шириной айтема 0%
+const resize = window.addEventListener(`load`, () => {
+	console.log(popUpscrollItems[0].getBoundingClientRect().width )
+
+	scroll(scrollItems, scrollCntr, 10)
+	scroll(popUpscrollItems, popUpscrollCntr, 10)
+});
 
 
 
@@ -176,9 +183,6 @@ const scroll = (array, container, gap) => {
 					return
 				}
 
-
-				console.log()
-
 				for (let i = 0; i < array.length; i++) {
 
 					let target = initIndent[i] - (touchOffsetX - event.screenX)
@@ -248,15 +252,12 @@ const scroll = (array, container, gap) => {
 				array[i].style.left = `${array[0].getBoundingClientRect().width * i + (gap() * i)}px`
 			}
 		})
+
+
 	}
 }
 
 
-// запуск скрипта скролла после загрузки окна. Исключает баг с шириной айтема 0%
-window.addEventListener(`load`, () => {
-	scroll(scrollItems, scrollCntr, 10)
-	scroll(popUpscrollItems, popUpscrollCntr, 10)
-});
 
 
 
@@ -378,7 +379,7 @@ for (let item of items) {
 								document.querySelector(`.game__popup_inner-text`).innerHTML = `Нолики победили`
 							}
 							gamePopUp.style.opacity = 1
-							gamePopUp.style.zIndex = 1
+							gamePopUp.style.zIndex = 2
 							return
 						}
 						count = []
@@ -388,7 +389,7 @@ for (let item of items) {
 			if (arr.length == 0) {
 				document.querySelector(`.game__popup_inner-text`).innerHTML = `Ничья`
 				gamePopUp.style.opacity = 1
-				gamePopUp.style.zIndex = 1
+				gamePopUp.style.zIndex = 2
 				return
 			}
 		}
