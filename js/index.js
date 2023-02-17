@@ -2,8 +2,16 @@
 // бургер------------------------------------------------------
 const burger = document.querySelector(`.burger`)
 const burgerButton = document.querySelector(`.nav__burger-button`)
+const burgerLinks = document.querySelectorAll(`.burger__a`)
 let toggleBurger = false
 
+for(let item of burgerLinks){
+	item.addEventListener(`click`, () => {
+		toggleBurger = !toggleBurger
+		burger.style.opacity = 0
+		burger.style.zIndex = -1
+	})
+}
 
 burgerButton.addEventListener(`click`, () => {
 	toggleBurger = !toggleBurger
@@ -12,11 +20,13 @@ burgerButton.addEventListener(`click`, () => {
 		burger.style.opacity = 1
 	} else {
 		burger.style.opacity = 0
-		setTimeout(() => {
-			burger.style.zIndex = -1
-		}, 200);
+		burger.style.zIndex = -1
 	}
 })
+
+
+
+
 
 
 
