@@ -91,7 +91,7 @@ popUpCloseButton.addEventListener(`click`, () => {
 
 // запуск скрипта скролла после загрузки окна. Исключает баг с шириной айтема 0%
 const resize = window.addEventListener(`load`, () => {
-	console.log(popUpscrollItems[0].getBoundingClientRect().width )
+	console.log(popUpscrollItems[0].getBoundingClientRect().width)
 
 	scroll(scrollItems, scrollCntr, 10)
 	scroll(popUpscrollItems, popUpscrollCntr, 10)
@@ -292,7 +292,7 @@ const scroll = (array, container, gap) => {
 
 const game = document.querySelector(`.game`)
 const gamePopUp = document.querySelector(`.game__popup`)
-let gameWidth = game.getBoundingClientRect().width
+const gameWidth = game.getBoundingClientRect().width
 const remove = `<img src="./img/remove.png" class="game__img" id="remove" alt=""/>`
 const circle = `<img src="./img/circle.png" class="game__img" id="circle" alt=""/>`
 
@@ -330,18 +330,25 @@ let count = []
 
 
 for (let item of items) {
+
 	item.onmousedown = () => {
 
 		const check = (imgId, id) => {
 			let arr = []
-
 			for (let y = 0; y < items.length; y++) {
-
 
 				if (!items[y].querySelector(`.game__img`)) {
 					arr.push(1)
 				}
 			}
+
+
+
+
+
+
+
+
 
 			let rrr
 			if (id) {
@@ -356,12 +363,6 @@ for (let item of items) {
 			for (let i = 0; i < win.length; i++) {
 				for (let t = 0; t < 3; t++) {
 
-
-
-
-
-
-
 					if (win[i][t] === rrr) {
 						for (let r = 0; r < 3; r++) {
 
@@ -369,7 +370,6 @@ for (let item of items) {
 								count.push(1)
 							}
 						}
-
 
 
 						if (count.length === 3) {
@@ -380,17 +380,18 @@ for (let item of items) {
 							}
 							gamePopUp.style.opacity = 1
 							gamePopUp.style.zIndex = 2
-							return
 						}
 						count = []
 					}
 				}
 			}
+
+
+
 			if (arr.length == 0) {
 				document.querySelector(`.game__popup_inner-text`).innerHTML = `Ничья`
 				gamePopUp.style.opacity = 1
 				gamePopUp.style.zIndex = 2
-				return
 			}
 		}
 
