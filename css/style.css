@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 1920px;
   min-width: 400px;
   margin: 0 auto;
-  z-index: 1;
+  z-index: 2;
 }
 .header__bg-img {
   position: absolute;
@@ -197,8 +197,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__cntr {
   z-index: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: end;
+  align-items: center;
   width: 70%;
   margin: 0 auto;
   height: 100%;
@@ -1195,80 +1194,6 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid black;
   padding: 15px;
 }
-.game__item .game {
-  width: 60%;
-  margin: 50px auto;
-  background: rgb(21, 103, 124);
-  display: flex;
-  flex-wrap: wrap;
-}
-.game__item .game__title {
-  font-size: 40px;
-  font-weight: 700;
-  color: rgb(223, 222, 222);
-  margin-bottom: 55px;
-  margin-top: 25px;
-}
-.game__item .game__item {
-  width: 33.333%;
-  height: 33.333%;
-  border: 2px solid black;
-  padding: 15px;
-}
-.game__item .game__img {
-  width: 100%;
-  height: 100%;
-}
-.game__item .game__popup {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.904);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.game__item .game__popup_inner-text {
-  font-size: 45px;
-  margin-right: 15px;
-  color: rgb(17, 103, 114);
-  text-shadow: 0 0 5px rgb(17, 103, 114);
-}
-.game__item .game__popup_button {
-  position: absolute;
-  top: 60%;
-  padding: 5px 25px;
-  font-size: 35px;
-  font-weight: 700;
-  border-radius: 5px;
-  background: rgb(17, 103, 114);
-  color: white;
-  box-shadow: 0 0 3px 3px rgb(17, 103, 114);
-  text-shadow: 0 0 2px white;
-}
-@media (max-width: 960px) {
-  .game__item .game {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .game__item .game__title {
-    font-size: 34px;
-    width: 100%;
-    text-align: center;
-    margin-left: 0;
-    margin-bottom: 40px;
-  }
-  .game__item .game__popup_inner-text {
-    font-size: 34px;
-  }
-  .game__item .game__popup_button {
-    font-size: 25px;
-  }
-}
 .game__img {
   width: 100%;
   height: 100%;
@@ -1285,6 +1210,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.5s;
 }
 .game__popup_inner-text {
   font-size: 45px;

@@ -7,7 +7,7 @@
 	max-width: 1920px;
 	min-width: 400px;
 	margin: 0 auto;
-	z-index: 1;
+	z-index: 2;
 	&__bg-img{
 		position: absolute;
 		filter: brightness(50%);
@@ -18,8 +18,7 @@
 	&__cntr {
 		z-index: 1;
 		display: flex;
-		flex-direction: column;
-		justify-content: end;
+		align-items: center;
 		width: 70%;
 		margin: 0 auto;
 		height: 100%;

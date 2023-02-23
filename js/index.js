@@ -1,11 +1,10 @@
-
 // бургер------------------------------------------------------
 const burger = document.querySelector(`.burger`)
 const burgerButton = document.querySelector(`.nav__burger-button`)
 const burgerLinks = document.querySelectorAll(`.burger__a`)
 let toggleBurger = false
 
-for(let item of burgerLinks){
+for (let item of burgerLinks) {
 	item.addEventListener(`click`, () => {
 		toggleBurger = !toggleBurger
 		burger.style.opacity = 0
@@ -16,7 +15,7 @@ for(let item of burgerLinks){
 burgerButton.addEventListener(`click`, () => {
 	toggleBurger = !toggleBurger
 	if (toggleBurger) {
-		burger.style.zIndex = 2
+		burger.style.zIndex = 5
 		burger.style.opacity = 1
 	} else {
 		burger.style.opacity = 0
@@ -25,25 +24,13 @@ burgerButton.addEventListener(`click`, () => {
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Получаем коллекцию блоков слайдера + контейнер
 const scrollItems = document.querySelectorAll(`.comparison__changes_scroll-after-item`)
 const scrollCntr = document.querySelector(`.comparison__changes_scroll-after`)
 
 const popUpscrollItems = document.querySelectorAll(`.popup__scroll-item`)
 const popUpscrollCntr = document.querySelector(`.popup__scroll`)
+
 
 
 
@@ -101,7 +88,6 @@ popUpCloseButton.addEventListener(`click`, () => {
 
 // запуск скрипта скролла после загрузки окна. Исключает баг с шириной айтема 0%
 const resize = window.addEventListener(`load`, () => {
-	console.log(popUpscrollItems[0].getBoundingClientRect().width)
 
 	scroll(scrollItems, scrollCntr, 10)
 	scroll(popUpscrollItems, popUpscrollCntr, 10)
@@ -291,13 +277,6 @@ const scroll = (array, container, gap) => {
 
 
 
-
-
-
-
-
-
-
 // GAME-------------------------------------------------
 
 const game = document.querySelector(`.game`)
@@ -314,14 +293,17 @@ game.setAttribute(`style`, `height: ${gameWidth}px`)
 
 
 // сетаем ячейки
-for (let i = 1; i < 10; i++) {
+for (let i = 0; i < 9; i++) {
 	const gameItem = document.createElement(`div`)
 
 	gameItem.setAttribute(`class`, `game__item`)
 	gameItem.setAttribute(`id`, `${i}`)
 	game.append(gameItem)
 }
-// 2d массив
+
+
+
+// выигрышные комбинации
 const win = [
 	[1, 2, 3],
 	[4, 5, 6],
@@ -335,73 +317,203 @@ const win = [
 
 // дальше всё как в тумане...
 const items = document.querySelectorAll(`.game__item`)
-let count = []
+let botStepToggle = false
+let massOfItems = []
+let massOfItem = 0
+let setMassRows = []
+let indexArray = []
+let num = 0
+let stopGame = false
+
 
 
 
 for (let item of items) {
 
-	item.onmousedown = () => {
+	
 
-		const check = (imgId, id) => {
-			let arr = []
-			for (let y = 0; y < items.length; y++) {
+	const check = () => {
 
-				if (!items[y].querySelector(`.game__img`)) {
-					arr.push(1)
+		// проверка строк на наличие трёх крестиков/ноликов
+		for (let i = 0; i < win.length; i++) {
+			let circleNumForCheckWin = 0
+			let removeNumForCheckWin = 0
+			for (let y = 0; y < win[i].length; y++) {
+				if (items[win[i][y] - 1].querySelector(`#circle`)) {
+					circleNumForCheckWin += 1
+				}
+				if (items[win[i][y] - 1].querySelector(`#remove`)) {
+					removeNumForCheckWin += 1
 				}
 			}
-
-
-
-
-
-
-
-
-
-			let rrr
-			if (id) {
-				rrr = parseInt(id)
-			} else {
-				rrr = parseInt(item.id)
+			if(circleNumForCheckWin === win[i].length) {
+				document.querySelector(`.game__popup_inner-text`).innerHTML = `Нолики победили`
+				gamePopUp.style.opacity = 1
+				gamePopUp.style.zIndex = 2
+				stopGame = true
+				botStepToggle = false
 			}
+			if(removeNumForCheckWin === win[i].length) {
+				document.querySelector(`.game__popup_inner-text`).innerHTML = `Крестики победили`
+				gamePopUp.style.opacity = 1
+				gamePopUp.style.zIndex = 2
+				stopGame = true
+				botStepToggle = false
+			}
+		}
+
+		// проверка поля на заполнение
+		let checkFillFullField = 0
+		for (let i = 0; i < items.length; i++) {
+			if(items[i].firstChild) {
+				checkFillFullField += 1
+			}
+		}
+
+		if(checkFillFullField === 9) {
+			document.querySelector(`.game__popup_inner-text`).innerHTML = `Ничья`
+			gamePopUp.style.opacity = 1
+			gamePopUp.style.zIndex = 2
+			stopGame = true
+			botStepToggle = false
+		}
+	}
 
 
 
 
-			for (let i = 0; i < win.length; i++) {
-				for (let t = 0; t < 3; t++) {
 
-					if (win[i][t] === rrr) {
-						for (let r = 0; r < 3; r++) {
+	item.onclick = () => {
+		indexArray = []
 
-							if (items[win[i][r] - 1].querySelector(`#${imgId}`)) {
-								count.push(1)
-							}
-						}
+		// переключалка хода
+		if (!botStepToggle) {
+			if (item.firstChild) {
+				return
+			} else {
+				item.innerHTML = remove
+				botStepToggle = true
+				check()
+				if(!stopGame){
+					botStep()
+				}
+			}
+		}
+	}
 
 
-						if (count.length === 3) {
-							if (imgId === `remove`) {
-								document.querySelector(`.game__popup_inner-text`).innerHTML = `Крестики победили`
-							} else {
-								document.querySelector(`.game__popup_inner-text`).innerHTML = `Нолики победили`
-							}
-							gamePopUp.style.opacity = 1
-							gamePopUp.style.zIndex = 2
-						}
-						count = []
+
+	// ЛОГИКА БОТА
+	const botStep = () => {
+
+		// вес items в зависимости от наличия Х или О
+		for (let i = 0; i < items.length; i++) {
+			massOfItems[i] = 0
+			if (items[i].querySelector(`.game__img`)?.id === `remove`) {
+				massOfItems[i] += 2
+			}
+			if (items[i].querySelector(`.game__img`)?.id === `circle`) {
+				massOfItems[i] += 1
+			}
+		}
+
+		// создание массива с "весом" всех возможных, выигрышных комбинаций
+		for (let i = 0; i < win.length; i++) {
+			setMassRows[i] = 0
+			for (let y = 0; y < win[i].length; y++) {
+				massOfItem += massOfItems[win[i][y] - 1]
+			}
+			setMassRows[i] = massOfItem
+			massOfItem = 0
+		}
+
+
+		// сортируем строки по весу, на основе веса каждого айтема
+
+		let sortArray = [...setMassRows].sort((a, b) => {
+			return a - b
+		})
+
+		let decrementNumForMaxValueOfRow = - 1
+
+		let maxValueOfRow = sortArray[sortArray.length + decrementNumForMaxValueOfRow]
+
+		let checkContentForStep = []
+		let freeCells = []
+
+
+		const openRow = () => {
+			let heavyRow = []
+			heavyRow = []
+
+			for (let i = 0; i < checkContentForStep.length; i++) {
+				for (let y = 0; y < checkContentForStep[i].length; y++) {
+					if (!items[checkContentForStep[i][y] - 1].firstChild) {
+						heavyRow.push(checkContentForStep[i])
 					}
 				}
 			}
+			let newHeavyRow = [...new Set(heavyRow)]
+
+			if (newHeavyRow.length === 0) {
+				maxValueOfRow -= 1
+				setRowForStep()
+			}
+			else {
+
+				for (let i = 0; i < newHeavyRow.length; i++) {
+					for (let y = 0; y < newHeavyRow[i].length; y++) {
+						if (!items[newHeavyRow[i][y] - 1].firstChild) {
+							freeCells.push(newHeavyRow[i][y])
+						}
+					}
+				}
+				let newFreeCells = [...new Set(freeCells)]
 
 
 
-			if (arr.length == 0) {
-				document.querySelector(`.game__popup_inner-text`).innerHTML = `Ничья`
-				gamePopUp.style.opacity = 1
-				gamePopUp.style.zIndex = 2
+				// ищем строку с двумя кругами
+				let doubleCircle = []
+				for (let i = 0; i < win.length; i++) {
+					for (let t = 0; t < win[i].length; t++) {
+						if (items[win[i][t] - 1].querySelector(`#circle`)) {
+							doubleCircle.push(win[i])
+						}
+					}
+				}
+
+				const duplicates = () => doubleCircle.filter((item, index) => doubleCircle.indexOf(item) !== index)
+
+
+
+
+				for (let i = 0; i < duplicates().length; i++) {
+					let circleNumForStep = 0
+					let removeNumForStep = 0
+
+					for (let y = 0; y < duplicates()[i].length; y++) {
+						if (items[duplicates()[i][y] - 1].querySelector(`#remove`)) {
+							removeNumForStep += 1
+						}
+
+						if (items[duplicates()[i][y] - 1].querySelector(`#circle`)) {
+							circleNumForStep += 1
+						}
+
+						if (circleNumForStep === 2 && removeNumForStep === 0) {
+							for (let q = 0; q < duplicates()[i].length; q++) {
+								if (!items[duplicates()[i][q] - 1].firstChild) {
+									items[duplicates()[i][q] - 1].innerHTML = circle
+									check()
+									return
+								}
+							}
+						}
+					}
+				}
+
+				doubleCircle = []
+				items[newFreeCells[Math.floor(Math.random() * newFreeCells.length)] - 1].innerHTML = circle
 			}
 		}
 
@@ -409,40 +521,23 @@ for (let item of items) {
 
 
 
-		const botStep = () => {
 
-			let setNull = []
+		const setRowForStep = () => {
 			for (let i = 0; i < win.length; i++) {
-				if (!items[i].querySelector(`.game__img`)) {
-					setNull.push(i)
+				if (setMassRows[i] === maxValueOfRow) {
+					checkContentForStep.push(win[i])
 				}
 			}
-
-
-
-			if (items[setNull[Math.floor(Math.random() * (setNull.length - 1))]]) {
-				const number = items[setNull[Math.floor(Math.random() * (setNull.length - 1))]]
-				number.innerHTML = circle
-				imgId = `circle`
-				check(imgId, number.id)
-			}
+			openRow()
 		}
-
-
-
-
-
-
-		if (item.firstChild) {
-			return
-		} else {
-			item.innerHTML = remove
-			imgId = `remove`
-			check(imgId)
-			botStep()
-		}
+		setRowForStep()
+		botStepToggle = false
 	}
 }
+
+
+
+
 
 
 
@@ -450,16 +545,13 @@ document.querySelector(`.game__popup_button`).onmousedown = () => {
 
 	for (let item of items) {
 		item.innerHTML = ``
-		gamePopUp.style.opacity = 0
-		gamePopUp.style.zIndex = -1
 	}
+	gamePopUp.style.opacity = 0
+	setTimeout(() => {
+		gamePopUp.style.zIndex = -1
+	}, 200);
+	stopGame = false
 }
-
-
-
-
-
-
 
 
 

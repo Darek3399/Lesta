@@ -13,12 +13,11 @@
 
 
 
-
 	<nav class="nav">
 		<ul class="nav__ul">
-			<li class="nav__li">
+			<!-- <li class="nav__li">
 				<a class="nav__a" href="#news-tusks">Задачи новостей</a>
-			</li>
+			</li> -->
 			<li class="nav__li">
 				<a class="nav__a" href="#patchnotes-comparison">Сравнение патч-ноутов</a>
 			</li>
@@ -35,9 +34,9 @@
 	</nav>
 	<div class="burger">
 		<ul class="burger__ul">
-			<li class="burger__li">
+			<!-- <li class="burger__li">
 				<a class="burger__a" href="#news-tusks">Задачи новостей</a>
-			</li>
+			</li> -->
 			<li class="burger__li">
 				<a class="burger__a" href="#patchnotes-comparison">Сравнение патч-ноутов</a>
 			</li>
@@ -58,12 +57,6 @@
 	<header class="header">
 		<img src="./img/header_bg.jpg" class="header__bg-img"></img>
 		<div class="header__cntr">
-			<h2 class="header__subtitle">Компания</h2>
-			<div class="header__title-cntr">
-				<h1 class="header__title">Серёга</h1>
-				<h2 class="header__subtitle1">и тараканы в его голове</h2>
-			</div>
-			<span class="header__span">представляет:</span>
 			<span class="header__text">Тестовое задание на должность<br>"Junior Frontend Developer"</span>
 		</div>
 		<div class="header__color-transition"></div>
@@ -78,7 +71,7 @@
 
 	<main class="main">
 
-		<div class="main__separator"></div>
+		<!-- <div class="main__separator"></div>
 		<div class="main__cntr">
 			<div class="sites-tusks">
 				<span class="sites-tusks__enumeration_title"><a id="news-tusks"></a>Компании, с сайтами которых я знаком /
@@ -148,7 +141,7 @@
 						странице и углубиться в нюансы.</span>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="main__separator"><a id="patchnotes-comparison"></a></div>
 		<div class="main__cntr">
@@ -240,7 +233,7 @@
 
 						<div class="comparison__changes_arrow-good-example">
 							<p class="comparison__changes_arrow-good-example-text">Один из вариантов адекватной визуализации.
-								Текст появляется плавно и нет ложных срабатываний -</p>
+								Текст появляется плавно и нет ложных срабатываний</p>
 							<div class="comparison__changes_arrow-good-example-cntr">
 								<div class="comparison__changes_arrow-good-example-flexible">
 									<span class="comparison__changes_arrow-good-example-flexible-text">Гамбургская верфь. Admiral
@@ -805,9 +798,9 @@
 
 
 				<div class="main__separator"></div>
-				<div class="main__cntr" style="padding-top: 15px; padding-bottom: 15px;">
+				<div class="main__cntr" id="game" style="padding-top: 15px; padding-bottom: 15px;">
 					<h2 class="game__title">Крестики - Нолики</h2>
-					<div class="game" id="game"></div>
+					<div class="game"></div>
 				</div>
 
 	</main>
@@ -822,7 +815,7 @@
 	</footer>
 
 
-	<script src="./js/index.js"></script>
+	<script src="./js/index.js" type="module"></script>
 </body>
 
 </html>
