@@ -68,6 +68,7 @@
 	.header__cntr{
 		width: 90%;
 		align-items: center;
+		justify-content: center;
 	}
 	.header__title-cntr{
 		margin-bottom: 10px;
@@ -92,10 +93,9 @@
 		margin-bottom: 40px;
 	}
 	.header__text {
-		font-size: 28px;
-		font-weight: 700;
-		line-height: 60px;
-
+		font-size: 35px;
+		line-height: 50px;
+		margin-bottom: -90px;
 	}
 }
 
@@ -132,6 +132,7 @@
 	}
 	.header__text {
 		font-weight: 700;
+		font-size: 28px;
 		line-height: 46px;
 	}
 }

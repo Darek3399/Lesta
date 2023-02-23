@@ -31,6 +31,7 @@
 		<button type="button" class="nav__burger-button">
 			<img src="./img/burger-menu.png" alt="">
 		</button>
+		<div class="nav__blur"></div>
 	</nav>
 	<div class="burger">
 		<ul class="burger__ul">
@@ -47,6 +48,9 @@
 				<a class="burger__a" href="#game">Крестики - Нолики</a>
 			</li>
 		</ul>
+		<button type="button" class="burger__button">
+			<img src="./img/remove.png" alt="">
+		</button>
 	</div>
 
 
@@ -799,7 +803,10 @@
 
 				<div class="main__separator"></div>
 				<div class="main__cntr" id="game" style="padding-top: 15px; padding-bottom: 15px;">
-					<h2 class="game__title">Крестики - Нолики</h2>
+					<div class="game__title-button-cntr">
+						<h2 class="game__title">Крестики - Нолики</h2>
+						<button type="button" class="game__reset-button">Сброс</button>
+					</div>
 					<div class="game"></div>
 				</div>
 

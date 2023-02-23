@@ -4,14 +4,30 @@
 	background: rgb(21, 103, 124);
 	display: flex;
 	flex-wrap: wrap;
+	&__title-button-cntr {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		margin-bottom: 55px;
+		margin-top: 25px;
+	}
 	&__title {
 		font-size: 40px;
 		font-weight: 700;
 		color: rgb(223, 222, 222);
-		margin-bottom: 55px;
-		margin-top: 25px;
 	}
-
+	&__reset-button {
+		height: fit-content;
+		padding: 5px 25px;
+		font-size: 30px;
+		font-weight: 700;
+		border-radius: 5px;
+		background: rgb(17, 103, 114);
+		color: white;
+		box-shadow: 0 0 3px 3px rgb(17 103 114);
+		text-shadow: 0 0 2px white;
+	}
 	&__item {
 		width: 33.333%;
 		height: 33.333%;
@@ -61,6 +77,9 @@
 	.game {
 		width: 100%;
 		margin: 0 auto;
+	}
+	.game__title-button-cntr {
+		flex-direction: column;
 	}
 	.game__title {
 		font-size: 34px;

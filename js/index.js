@@ -2,25 +2,32 @@
 const burger = document.querySelector(`.burger`)
 const burgerButton = document.querySelector(`.nav__burger-button`)
 const burgerLinks = document.querySelectorAll(`.burger__a`)
-let toggleBurger = false
+const burgerClose = document.querySelector(`.burger__button`)
+const gamePopUpForBurger = document.querySelector(`.game__popup`)
 
 for (let item of burgerLinks) {
 	item.addEventListener(`click`, () => {
-		toggleBurger = !toggleBurger
 		burger.style.opacity = 0
 		burger.style.zIndex = -1
+
+
+
+		gamePopUpForBurger.style.opacity = 0
+		setTimeout(() => {
+			gamePopUpForBurger.style.zIndex = -1
+		}, 200);
+		stopGame = false
 	})
 }
 
 burgerButton.addEventListener(`click`, () => {
-	toggleBurger = !toggleBurger
-	if (toggleBurger) {
-		burger.style.zIndex = 5
-		burger.style.opacity = 1
-	} else {
-		burger.style.opacity = 0
-		burger.style.zIndex = -1
-	}
+	burger.style.zIndex = 5
+	burger.style.opacity = 1
+})
+
+burgerClose.addEventListener(`click`, () => {
+	burger.style.opacity = 0
+	burger.style.zIndex = -1
 })
 
 
@@ -330,7 +337,7 @@ let stopGame = false
 
 for (let item of items) {
 
-	
+
 
 	const check = () => {
 
@@ -346,14 +353,14 @@ for (let item of items) {
 					removeNumForCheckWin += 1
 				}
 			}
-			if(circleNumForCheckWin === win[i].length) {
+			if (circleNumForCheckWin === win[i].length) {
 				document.querySelector(`.game__popup_inner-text`).innerHTML = `Нолики победили`
 				gamePopUp.style.opacity = 1
 				gamePopUp.style.zIndex = 2
 				stopGame = true
 				botStepToggle = false
 			}
-			if(removeNumForCheckWin === win[i].length) {
+			if (removeNumForCheckWin === win[i].length) {
 				document.querySelector(`.game__popup_inner-text`).innerHTML = `Крестики победили`
 				gamePopUp.style.opacity = 1
 				gamePopUp.style.zIndex = 2
@@ -365,12 +372,12 @@ for (let item of items) {
 		// проверка поля на заполнение
 		let checkFillFullField = 0
 		for (let i = 0; i < items.length; i++) {
-			if(items[i].firstChild) {
+			if (items[i].firstChild) {
 				checkFillFullField += 1
 			}
 		}
 
-		if(checkFillFullField === 9) {
+		if (checkFillFullField === 9) {
 			document.querySelector(`.game__popup_inner-text`).innerHTML = `Ничья`
 			gamePopUp.style.opacity = 1
 			gamePopUp.style.zIndex = 2
@@ -394,8 +401,10 @@ for (let item of items) {
 				item.innerHTML = remove
 				botStepToggle = true
 				check()
-				if(!stopGame){
-					botStep()
+				if (!stopGame) {
+					setTimeout(() => {
+						botStep()
+					}, Math.random() * 400);
 				}
 			}
 		}
@@ -550,6 +559,15 @@ document.querySelector(`.game__popup_button`).onmousedown = () => {
 	setTimeout(() => {
 		gamePopUp.style.zIndex = -1
 	}, 200);
+	stopGame = false
+}
+
+
+document.querySelector(`.game__reset-button`).onclick = () => {
+
+	for (let item of items) {
+		item.innerHTML = ``
+	}
 	stopGame = false
 }
 
