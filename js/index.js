@@ -227,6 +227,7 @@ const scroll = (array, container, gap) => {
 
 						if (parseInt(array[array.length - 1].style.left) < lastItemLeft) {
 							setLastLeftToggle = 1
+							console.log(lastItemLeft)
 							for (let ite = 0; ite < array.length; ite++) {
 								array[ite].style.left = `${setLastLeft[ite]}px`
 							}

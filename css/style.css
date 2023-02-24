@@ -516,7 +516,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   font-size: 30px;
   margin: 70px auto 10px auto;
-  color: rgb(17, 103, 114);
+  color: rgb(18, 160, 179);
   font-weight: 700;
 }
 .comparison__changes_item-title {
@@ -1042,7 +1042,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   font-size: 30px;
   margin: 70px auto 10px auto;
-  color: rgb(17, 103, 114);
+  color: rgb(18, 160, 179);
   font-weight: 700;
 }
 .changes-to-the-main-page__design-errors_item {
@@ -1134,7 +1134,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   font-size: 30px;
   margin: 70px auto 10px auto;
-  color: rgb(17, 103, 114);
+  color: rgb(18, 160, 179);
   font-weight: 700;
 }
 .layout-errors__item_text {
@@ -1201,7 +1201,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .game {
-  width: 60%;
+  width: 50%;
   margin: 50px auto;
   background: rgb(21, 103, 124);
   display: flex;
